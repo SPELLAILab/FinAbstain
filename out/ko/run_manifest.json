@@ -1,0 +1,14 @@
+{
+  "timestamp_start": "2026-09-19T19:38:43.257835+00:00",
+  "timestamp_end": "2026-09-19T19:50:37.433850+00:00",
+  "config_sha256": "3abd932b1468a618e02a1a2c6c6fa4e6894b2ce563ffd49d84c2410cfab84e09",
+  "git_commit": "ed1c10e971afa6d8d5181f6bb5dfe27973982e92",
+  "resolved_model_tags": {
+    "gemma4:31b": "gemma4:31b-cloud",
+    "gpt-oss:120b": "gpt-oss:120b-cloud",
+    "nemotron-3-super": "nemotron-3-super:cloud"
+  },
+  "base_url": "http://127.0.0.1:11434",
+  "llm_calls": 286,
+  "cache_hits": 0
+}

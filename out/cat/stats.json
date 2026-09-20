@@ -1,0 +1,349 @@
+{
+  "stage_counts": {
+    "qgen": {
+      "passed": 66
+    },
+    "s04_qgen": {
+      "rejected": 14
+    },
+    "edit_answerable": {
+      "passed": 15
+    },
+    "s05_edit_conflict": {
+      "rejected": 2
+    },
+    "edit_ambiguous": {
+      "passed": 18
+    },
+    "edit_missing": {
+      "passed": 15
+    },
+    "edit_conflict": {
+      "passed": 14
+    },
+    "s05_edit_missing": {
+      "rejected": 1
+    },
+    "s05_edit_ambiguous": {
+      "rejected": 1
+    },
+    "checked": {
+      "passed": 43
+    },
+    "s06_checks": {
+      "rejected": 23
+    },
+    "validated": {
+      "passed": 32
+    },
+    "s07_validate": {
+      "rejected": 11
+    }
+  },
+  "rejections": [
+    {
+      "item_id": "cat_sec0078",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the before tax stock-based compensation expense for the Company in 2022?\",\n  \"answer\": \"$260 million\",\n  \"evidence_span\": \"Before tax, stock-based compensation expense for 2024, 2023 and 2022 was $301 million, $281 million and $260 million, respectively, with a corresponding income tax benefit of $40 million, $45 million and $43 million, respectively.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0069",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"How many dealers does the Company have located in the United States?\",\n  \"answer\": \"41\",\n  \"evidence_span\": \"We distribute our machines principally through a worldwide organization of dealers (dealer network), 41 located in the United States and 111 located outside the United States, serving 187 countries.\",\n  \"fact_type\": \"count\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0075",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"How many shares of common stock were issued from Treasury stock by the Company for 2024?\",\n  \"answer\": \"1,972,037\",\n  \"evidence_span\": \"Common stock issued from Treasury stock under the plans totaled 1,972,037 for 2024, 2,497,799 for 2023 and 2,340,887 for 2022.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0040",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What specific tax benefit was excluded from the Company's Adjusted Profit Per Share in 2023?\",\n  \"answer\": \"a discrete tax benefit for a tax law change related to currency translation\",\n  \"evidence_span\": \"Adjusted Profit Per Share \u2013 Profit per share excluding restructuring income/costs, a discrete tax benefit for a tax law change related to currency translation, pension and OPEB mark-to-market gains/losses and certain deferred tax valuation allowance adjustments in 2023.\",\n  \"fact_type\": \"name\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0073",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amount of trade receivables from dealers and end users for the Company as of December 31, 2024?\",\n  \"answer\": \"$10,611 million\",\n  \"evidence_span\": \"Trade receivables from dealers and end users were $10,611 million, $10,691 million and $10,189 million as of December 31, 2024, 2023 and 2022, respectively.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0083",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amount of undistributed profits of non-U.S. subsidiaries that the Company considers indefinitely reinvested?\",\n  \"answer\": \"$20 billion\",\n  \"evidence_span\": \"Undistributed profits of non-U.S. subsidiaries of approximately $20 billion are considered indefinitely reinvested.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0074",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amount of contract assets for the Company as of December 31, 2024?\",\n  \"answer\": \"$321 million\",\n  \"evidence_span\": \"Contract assets were $321 million, $332 million and $333 million as of December 31, 2024, 2023 and 2022, respectively.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0041",
+      "stage": "s04_qgen",
+      "reason": "answer_not_in_evidence",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"Which two subsidiaries are primarily included in the Company's definition of Financial Products?\",\n  \"answer\": \"Company W Financial Services Corporation and Company W Insurance Holdings Inc.\",\n  \"evidence_span\": \"The company defines Financial Products as our finance and insurance subsidiaries, primarily Company W Financial Services Corporation (Company E Financial) and Company W Insurance Holdings Inc. (Insurance Services).\",\n  \"fact_type\": \"name\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0108",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n \"question\": \"What was the amount of loans carried at fair value for the Company as of December 31, 2023?\",\n \"answer\": \"$74 million\",\n \"evidence_span\": \"Company E Financial had loans carried at fair value of $80 million and $74 million as of December 31, 2024 and 2023, respectively.\",\n \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0103",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the total amount of interest paid on short-term and long-term borrowings by the Company in 2022?\",\n  \"answer\": \"$1,294 million\",\n  \"evidence_span\": \"Interest paid on short-term and long-term borrowings for 2024, 2023 and 2022 was $2,345 million, $1,936 million and $1,294 million, respectively.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0111",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What were the unused commitments to extend credit to customers that were not unconditionally cancellable for the Company as of December 31, 2024?\",\n  \"answer\": \"$1,137 million\",\n  \"evidence_span\": \"The unused commitments to extend credit to customers that are not unconditionally cancellable was $1,137 million at December 31, 2024.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0114",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What is the fixed useful life used by the Company to amortize goodwill allocated to segments?\",\n  \"answer\": \"20-year\",\n  \"evidence_span\": \"We amortize goodwill allocated to segments using a fixed amount based on a 20-year useful life.\",\n  \"fact_type\": \"other\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0093",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the net goodwill for the Energy & Transportation segment of the Company as of December 31, 2024?\",\n  \"answer\": \"$2,014 million\",\n  \"evidence_span\": \"Energy & Transportation\\nGoodwill | 2,939\\nImpairment | (925) | \u2014 | (925)\\nNet goodwill | 2,034 | (20) | 2,014\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0091",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amortized cost basis of finance receivables modified for borrowers experiencing financial difficulty in the Company's Customer portfolio segment during the year ended December 31, 2024?\",\n  \"answer\": \"$45 million\",\n  \"evidence_span\": \"The amortized cost basis of finance receivables modified for borrowers experiencing financial difficulty in Company E Financial's Customer portfolio segment during the years ended December 31, 2024 and 2023, was $45 million and $63 million, respectively.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "cat_sec0064",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value 1850 relative difference 0.039 < 0.05"
+    },
+    {
+      "item_id": "cat_sec0126",
+      "stage": "s05_edit_missing",
+      "reason": "Answer 'August 29, 2024' is still present in the text after deletion"
+    },
+    {
+      "item_id": "cat_sec0050",
+      "stage": "s05_edit_ambiguous",
+      "reason": "Word 'the' still appears in new_question"
+    },
+    {
+      "item_id": "cat_sec0124",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value July 1, 2021 relative difference 0.000 < 0.05"
+    },
+    {
+      "item_id": "cat_sec0064",
+      "stage": "s06_checks",
+      "reason": "Conflicting value 1850 relative difference 0.039 < 0.05"
+    },
+    {
+      "item_id": "cat_sec0009",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Principal"
+    },
+    {
+      "item_id": "cat_sec0115",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0036",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0031",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0116",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0066",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0035",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0126",
+      "stage": "s06_checks",
+      "reason": "Answer 'August 29, 2024' is still present in the text after deletion"
+    },
+    {
+      "item_id": "cat_sec0006",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Principal"
+    },
+    {
+      "item_id": "cat_sec0050",
+      "stage": "s06_checks",
+      "reason": "Word 'the' still appears in new_question"
+    },
+    {
+      "item_id": "cat_sec0062",
+      "stage": "s06_checks",
+      "reason": "distractor_relative_diff_0.000_below_threshold"
+    },
+    {
+      "item_id": "cat_sec0039",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0092",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Principal"
+    },
+    {
+      "item_id": "cat_sec0117",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0118",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item; distractor_relative_diff_0.027_below_threshold"
+    },
+    {
+      "item_id": "cat_sec0067",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0026",
+      "stage": "s06_checks",
+      "reason": "distractor_relative_diff_0.000_below_threshold"
+    },
+    {
+      "item_id": "cat_sec0056",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0124",
+      "stage": "s06_checks",
+      "reason": "Conflicting value July 1, 2021 relative difference 0.000 < 0.05"
+    },
+    {
+      "item_id": "cat_sec0057",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0037",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0033",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Item"
+    },
+    {
+      "item_id": "cat_sec0087",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=ambiguous"
+    },
+    {
+      "item_id": "cat_sec0106",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=missing, A=missing, B=error"
+    },
+    {
+      "item_id": "cat_sec0089",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=answerable"
+    },
+    {
+      "item_id": "cat_sec0105",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=answerable"
+    },
+    {
+      "item_id": "cat_sec0090",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=answerable"
+    },
+    {
+      "item_id": "cat_sec0084",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=missing, A=answerable, B=answerable"
+    },
+    {
+      "item_id": "cat_sec0125",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=conflict, B=conflict"
+    },
+    {
+      "item_id": "cat_sec0085",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=ambiguous"
+    },
+    {
+      "item_id": "cat_sec0027",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=conflict, A=answerable, B=conflict"
+    },
+    {
+      "item_id": "cat_sec0038",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=answerable, A=answerable, B=error"
+    },
+    {
+      "item_id": "cat_sec0100",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=conflict"
+    }
+  ],
+  "llm_calls": 240,
+  "cache_hits": 0
+}

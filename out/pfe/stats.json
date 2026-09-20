@@ -1,0 +1,403 @@
+{
+  "stage_counts": {
+    "qgen": {
+      "passed": 78
+    },
+    "s04_qgen": {
+      "rejected": 22
+    },
+    "edit_answerable": {
+      "passed": 22
+    },
+    "s05_edit_missing": {
+      "rejected": 3
+    },
+    "edit_ambiguous": {
+      "passed": 16
+    },
+    "edit_missing": {
+      "passed": 16
+    },
+    "edit_conflict": {
+      "passed": 14
+    },
+    "s05_edit_conflict": {
+      "rejected": 6
+    },
+    "s05_edit_ambiguous": {
+      "rejected": 1
+    },
+    "checked": {
+      "passed": 59
+    },
+    "s06_checks": {
+      "rejected": 19
+    },
+    "validated": {
+      "passed": 52
+    },
+    "s07_validate": {
+      "rejected": 7
+    }
+  },
+  "rejections": [
+    {
+      "item_id": "pfe_sec0130",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amount of unremitted earnings of the Company's international subsidiaries as of December 31, 2024?\",\n  \"answer\": \"$78.3 billion\",\n  \"evidence_span\": \"As of December 31, 2024, we have not made a U.S. tax provision on $78.3 billion of unremitted earnings of our international subsidiaries.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0122",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the reduction to Research and development expenses for the Company in 2023 under the funding arrangement with Blackstone?\",\n  \"answer\": \"$236 million\",\n  \"evidence_span\": \"The reduction to Research and development expenses in 2024 and 2023 was $182 million and $236 million, respectively.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0113",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the total fair value of the consideration transferred by the Company for the acquisition of Person V on December 14, 2023?\",\n  \"answer\": \"$59.6 billion\",\n  \"evidence_span\": \"The total fair value of the consideration transferred was $59.6 billion ($58.6 billion, net of cash acquired).\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0111",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"Through what year did the Company elect to make payments for the noncurrent portion of the repatriation tax liability?\",\n  \"answer\": \"2026\",\n  \"evidence_span\": \"Other taxes payable as of December 31, 2024 and 2023 include liabilities for uncertain tax positions and the noncurrent portion of the repatriation tax liability for which we elected payment over eight years through 2026.\",\n  \"fact_type\": \"date\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0118",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What percentage of Haleon's outstanding voting shares did the Company own as of December 31, 2024?\",\n  \"answer\": \"approximately 15%\",\n  \"evidence_span\": \"After the October 2024 share sale, we owned approximately 15% of the outstanding voting shares of Haleon as of December 31, 2024 .\",\n  \"fact_type\": \"percentage\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0131",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\"question\": \"What was the net increase in interest related to unrecognized tax benefits recorded by the Company in 2024?\", \"answer\": \"$123 million\", \"evidence_span\": \"In 2024, we recorded a net increase in interest of $123 million.\", \"fact_type\": \"amount\"}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0141",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n \"question\": \"What was the amount of the transfer of IPR&D to developed technology rights for talazoparib (Talzenna) at the Company?\",\n \"answer\": \"$981 million\",\n \"evidence_span\": \"The decrease in the gross carrying amount reflects impairments of $2.6 billion (see Note 4), $2.3 billion of measurement period adjustments related to our acquisition of Person V (see Note 2A), and the transfer of IPR&D to developed technology rights of $981 million for talazoparib (Talzenna).\",\n \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0108",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What were the advertising expenses for the Company in 2022?\",\n  \"answer\": \"$3.8 billion\",\n  \"evidence_span\": \"Advertising expenses totaled approximately $4.5 billion in 2024, $5.0 billion in 2023 and $3.8 billion in 2022.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0125",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amount of the intangible asset impairment charge for the Company's Person U segment in 2024?\",\n  \"answer\": \"$324 million\",\n  \"evidence_span\": \"2024 also includes a $324 million intangible asset impairment charge, associated with our Person U segment that represents IPR&D related to a Phase 3 study for the treatment of DMD, which reflects unfavorable clinical trial results.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0173",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the amount of the non-cash revenue reversal recorded by the Company in the fourth quarter of 2023 in connection with the amended agreement with the U.S. government?\",\n  \"answer\": \"$4.7 billion\",\n  \"evidence_span\": \"In connection with this agreement, we recorded a non-cash revenue reversal of $4.7 billion in the fourth quarter of 2023, of which a portion was associated with sales recorded in 2022, related to the expected return of an estimated 6.5 million treatment courses of EUA-labeled U.S. government inventory.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0157",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What is the disclosure threshold the Company adopted for potential or actual governmental monetary sanctions for proceedings under environmental laws?\",\n  \"answer\": \"$1 million\",\n  \"evidence_span\": \"For proceedings under environmental laws to which a governmental authority is a party, we have adopted a disclosure threshold of $1 million in potential or actual governmental monetary sanctions.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0169",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"How many operating segments does the Company use to manage its commercial Company N?\",\n  \"answer\": \"three\",\n  \"evidence_span\": \"We manage our commercial Company N through three operating segments, each led by a single manager: Person U, PC1 and Person T.\",\n  \"fact_type\": \"count\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0162",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n \"question\": \"In what month and year did the District Court issue an order granting the Company's motion for summary judgment regarding the Person P patent litigation?\",\n \"answer\": \"December 2024\",\n \"evidence_span\": \"In December 2024, the District Court issued an order granting Person A\u2019s motion for summary judgment, finding Enanta\u2019s patent invalid.\",\n \"fact_type\": \"date\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0161",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n \"question\": \"How many additional U.S. patents did the GSK Group allege Person C infringed in its August 2024 amended complaint?\",\n \"answer\": \"three\",\n \"evidence_span\": \"In August 2024, GSK Group filed an amended complaint alleging that Person C infringes three additional U.S. patents.\",\n \"fact_type\": \"count\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0154",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\"question\": \"How many TSRUs did the Company settle in 2024?\", \"answer\": \"2,419,674\", \"evidence_span\": \"In 2024, we settled 2,419,674 TSRUs with a weighted-average grant price of $37.46 per unit.\", \"fact_type\": \"count\"}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0016",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"Which note provides information on the significant customers of the Company?\",\n  \"answer\": \"Note 17C\",\n  \"evidence_span\": \"For information on our significant customers, see Note 17C .\",\n  \"fact_type\": \"name\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0155",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\"question\": \"What were the variable lease payments for the Company in 2022?\", \"answer\": \"$723 million\", \"evidence_span\": \"Variable lease payments amounted to $698 million in 2024, $599 million in 2023 and $723 million in 2022.\", \"fact_type\": \"amount\"}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0012",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n \"question\": \"Which product is listed as the treatment for COVID-19 within the Company's Primary Care portfolio?\",\n \"answer\": \"Person P\",\n \"evidence_span\": \"Treatment for COVID-19 : Person P\",\n \"fact_type\": \"name\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0037",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What percentage of the Company's total revenues in 2024 was accounted for by Person W?\",\n  \"answer\": \"12%\",\n  \"evidence_span\": \"For example, Person W accounted for 12% of Total revenues in 2024.\",\n  \"fact_type\": \"percentage\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0167",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What amount, plus interest, did the Company pay to the U.S. and participating states in January 2025 to resolve matters related to Biohaven?\",\n  \"answer\": \"$80.5 million\",\n  \"evidence_span\": \"Pursuant to these settlement agreements, $80.5 million, plus interest, was paid to the U.S. and participating states, and $4.5\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0168",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"What was the total amount of legally binding and enforceable commitments for the Company as of December 31, 2024?\",\n  \"answer\": \"$5.5 billion\",\n  \"evidence_span\": \"As of December 31, 2024, we had commitments totaling $5.5 billion that are legally binding and enforceable.\",\n  \"fact_type\": \"amount\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0021",
+      "stage": "s04_qgen",
+      "reason": "evidence_span_not_in_text",
+      "details": {
+        "raw_output": "```json\n{\n  \"question\": \"How many people does the Company's Accord for a Healthier World program aim to provide medicines and vaccines to?\",\n  \"answer\": \"1.2 billion people\",\n  \"evidence_span\": \"For example, our Accord for a Healthier World program aims to provide our full portfolio of patented and off-patent medicines and vaccines for which Person A holds global rights on a not-for-profit basis to 1.2 billion people living in 45 lower-income countries around the world.\",\n  \"fact_type\": \"count\"\n}\n```"
+      }
+    },
+    {
+      "item_id": "pfe_sec0070",
+      "stage": "s05_edit_missing",
+      "reason": "Answer '1%' is still present in the text after deletion"
+    },
+    {
+      "item_id": "pfe_sec0069",
+      "stage": "s05_edit_missing",
+      "reason": "Answer 'less than 1%' is still present in the text after deletion"
+    },
+    {
+      "item_id": "pfe_sec0164",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value January 2010 relative difference 0.007 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0185",
+      "stage": "s05_edit_missing",
+      "reason": "Answer 'December 19, 2017' is still present in the text after deletion"
+    },
+    {
+      "item_id": "pfe_sec0188",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value 2024 Annual Report relative difference 0.004 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0065",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value August 2022 relative difference 0.000 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0127",
+      "stage": "s05_edit_ambiguous",
+      "reason": "Word 'the' still appears in new_question"
+    },
+    {
+      "item_id": "pfe_sec0180",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value June 30, 2024 relative difference 0.032 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0006",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value June 2022 relative difference 0.000 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0024",
+      "stage": "s05_edit_conflict",
+      "reason": "Conflicting value 1995 relative difference 0.015 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0070",
+      "stage": "s06_checks",
+      "reason": "Answer '1%' is still present in the text after deletion"
+    },
+    {
+      "item_id": "pfe_sec0036",
+      "stage": "s06_checks",
+      "reason": "distractor_relative_diff_0.002_below_threshold"
+    },
+    {
+      "item_id": "pfe_sec0069",
+      "stage": "s06_checks",
+      "reason": "Answer 'less than 1%' is still present in the text after deletion"
+    },
+    {
+      "item_id": "pfe_sec0175",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: mCSPC |"
+    },
+    {
+      "item_id": "pfe_sec0062",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Biopharma; question_final_contains_answer"
+    },
+    {
+      "item_id": "pfe_sec0164",
+      "stage": "s06_checks",
+      "reason": "Conflicting value January 2010 relative difference 0.007 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0185",
+      "stage": "s06_checks",
+      "reason": "Answer 'December 19, 2017' is still present in the text after deletion"
+    },
+    {
+      "item_id": "pfe_sec0010",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Biopharma"
+    },
+    {
+      "item_id": "pfe_sec0160",
+      "stage": "s06_checks",
+      "reason": "distractor_relative_diff_0.000_below_threshold"
+    },
+    {
+      "item_id": "pfe_sec0188",
+      "stage": "s06_checks",
+      "reason": "Conflicting value 2024 Annual Report relative difference 0.004 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0065",
+      "stage": "s06_checks",
+      "reason": "Conflicting value August 2022 relative difference 0.000 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0127",
+      "stage": "s06_checks",
+      "reason": "Word 'the' still appears in new_question"
+    },
+    {
+      "item_id": "pfe_sec0180",
+      "stage": "s06_checks",
+      "reason": "Conflicting value June 30, 2024 relative difference 0.032 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0031",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Biopharma"
+    },
+    {
+      "item_id": "pfe_sec0166",
+      "stage": "s06_checks",
+      "reason": "distractor_relative_diff_0.000_below_threshold"
+    },
+    {
+      "item_id": "pfe_sec0035",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Biopharma"
+    },
+    {
+      "item_id": "pfe_sec0061",
+      "stage": "s06_checks",
+      "reason": "anonymization_residue_found: Biopharma"
+    },
+    {
+      "item_id": "pfe_sec0006",
+      "stage": "s06_checks",
+      "reason": "Conflicting value June 2022 relative difference 0.000 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0024",
+      "stage": "s06_checks",
+      "reason": "Conflicting value 1995 relative difference 0.015 < 0.05"
+    },
+    {
+      "item_id": "pfe_sec0105",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=conflict, A=ambiguous, B=conflict"
+    },
+    {
+      "item_id": "pfe_sec0142",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=ambiguous"
+    },
+    {
+      "item_id": "pfe_sec0133",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=conflict"
+    },
+    {
+      "item_id": "pfe_sec0071",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=answerable, A=answerable, B=error"
+    },
+    {
+      "item_id": "pfe_sec0172",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=missing, A=answerable, B=missing"
+    },
+    {
+      "item_id": "pfe_sec0101",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=ambiguous, A=answerable, B=answerable"
+    },
+    {
+      "item_id": "pfe_sec0013",
+      "stage": "s07_validate",
+      "reason": "validation_mismatch: gold=answerable, A=answerable, B=error"
+    }
+  ],
+  "llm_calls": 309,
+  "cache_hits": 0
+}
