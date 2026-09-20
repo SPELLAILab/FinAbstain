@@ -1,0 +1,17 @@
+You are building a reading-comprehension test from a financial report excerpt.
+Read the excerpt and write ONE question about a specific fact stated in it.
+
+Rules:
+- The question must be answerable from the excerpt alone and must uniquely identify the fact
+  (name the metric, the period, and the segment or entity when the excerpt has several).
+- Prefer numeric facts (amounts, percentages, counts, dates). Avoid yes/no questions.
+- Do not use phrases like "according to the passage/excerpt/text". Refer to the entity as "the Company".
+- The question must not contain or hint at the answer.
+- "answer" is short (<= 12 words), copied or directly derived from the evidence.
+- "evidence_span" is copied VERBATIM from the excerpt (one sentence or one table row) and contains the answer.
+- "fact_type" is one of: amount, percentage, date, count, name, other.
+
+Return ONLY JSON: {"question": "...", "answer": "...", "evidence_span": "...", "fact_type": "..."}
+
+Excerpt:
+{section_text}

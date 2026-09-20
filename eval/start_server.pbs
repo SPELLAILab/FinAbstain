@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# FinAbstain: Start llama-server as a Dedicated PBS Job on Port 8000
+# Keeps server alive until walltime expires or job is deleted via qdel.
+# ==============================================================================
+
+#PBS -N llama_server_8000
+#PBS -l select=1:ncpus=8:mem=30gb
+#PBS -l walltime=24:00:00
+#PBS -q workq
+#PBS -j oe
+#PBS -o logs/llama_server_8000.log
+
+if [ -n "${PBS_O_WORKDIR}" ]; then
+    cd "${PBS_O_WORKDIR}" || exit 1
+fi
+
+mkdir -p logs
+
+MIG_UUID="MIG-2f219700-5dc6-59eb-81ef-2bb9414d3ec0"
+LLAMA_SERVER="${HOME}/llama.cpp/build/bin/llama-server"
+GGUF=$(ls -1 /Data3/it_FA0571/.cache/huggingface/hub/models--bartowski--Qwen_Qwen3.5-9B-GGUF/snapshots/*/Qwen_Qwen3.5-9B-Q8_0.gguf 2>/dev/null | head -n 1)
+
+echo "======================================================================"
+echo "STARTING LLAMA-SERVER VIA PBS ON PORT 8000"
+echo "======================================================================"
+echo "Job ID:       ${PBS_JOBID}"
+echo "MIG GPU:      ${MIG_UUID}"
+echo "Model:        ${GGUF}"
+echo "Host/Port:    http://127.0.0.1:8000"
+echo "======================================================================"
+
+export CUDA_VISIBLE_DEVICES="${MIG_UUID}"
+
+exec "${LLAMA_SERVER}" \
+    -m "${GGUF}" \
+    -ngl 999 \
+    -c 16384 \
+    -np 1 \
+    -fa \
+    --jinja \
+    --host 127.0.0.1 \
+    --port 8000 \
+    --reasoning off \
+    --chat-template-kwargs '{"enable_thinking":false}'

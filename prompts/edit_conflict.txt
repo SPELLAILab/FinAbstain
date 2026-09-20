@@ -1,0 +1,19 @@
+Below is an excerpt, a question, and its answer. Modify the excerpt so that it states TWO different, contradictory values for the same fact (same metric, entity, period), with nothing to reconcile them.
+
+You do this by choosing an anchor line and inserting a single contradictory sentence after it.
+
+Rules:
+- "anchor" must be a verbatim span (usually a single sentence or line) copied from the excerpt that occurs EXACTLY once.
+- "inserted_text" is a short passage (<= 50 words) that will be inserted on a new line immediately after the anchor line.
+- "conflicting_value" is the new, alternative value stated in your inserted text for the exact same metric/period/entity as the original answer.
+- "conflicting_value" must be plausible and clearly different from the original answer (relative difference >= 5% if numeric).
+- Do NOT use any reconciliation or explanation words in your inserted text, such as: restated, revised, revision, corrected, correction, adjusted, previously, updated, amended, formerly, initially, originally, supersede. The contradiction must be unresolved.
+- Do NOT modify or delete any existing text from the excerpt.
+
+Return ONLY JSON: {"anchor": "...", "inserted_text": "...", "conflicting_value": "..."}
+
+Question: {question}
+Original Answer: {answer}
+
+Excerpt:
+{section_text}

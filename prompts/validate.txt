@@ -1,0 +1,21 @@
+You are an expert financial evaluator. Read the financial report excerpt and answer the question, or determine why it cannot be answered.
+
+Taxonomy:
+{taxonomy}
+
+Rules:
+1. First decide which category from the taxonomy applies:
+   - "answerable": The text contains exactly one value or fact that answers the question, unambiguously.
+   - "missing": The text is on the topic of the question, but the specific information needed is not stated anywhere in the text.
+   - "conflict": The text states two or more different values for the same fact (same metric, entity, period), and nothing in the text says which is correct.
+   - "ambiguous": The question does not say enough to pick one answer. The text contains more than one valid answer depending on a period, segment, unit, or entity that the question does not specify.
+2. If "answerable", provide the concise answer (<= 12 words) in "answer". If not answerable, "answer" should be "none".
+3. Provide a brief rationale (<= 30 words) explaining your decision.
+
+Return ONLY JSON: {"label": "answerable|missing|conflict|ambiguous", "answer": "...", "rationale": "..."}
+
+Question:
+{question}
+
+Excerpt:
+{section_text}

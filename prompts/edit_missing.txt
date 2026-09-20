@@ -1,0 +1,16 @@
+Below is an excerpt, a question, and its answer. Remove the information that answers the question.
+
+Return the exact spans to delete. Rules:
+- Each span must be copied VERBATIM from the excerpt and appear exactly once.
+- After deleting, the answer value (and any restatement of it, in any format) must not appear anywhere in the excerpt.
+- The remaining text must stay grammatical and on the same topic; do not delete unrelated content.
+- Delete as little as possible (typically one sentence or one table row).
+- Do NOT add any text. Do NOT write that data is missing, withheld, or undisclosed.
+
+Return ONLY JSON: {"deletions": ["<verbatim span 1>", "..."]}
+
+Question: {question}
+Answer: {answer}
+
+Excerpt:
+{section_text}

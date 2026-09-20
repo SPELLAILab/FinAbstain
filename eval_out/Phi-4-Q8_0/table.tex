@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & Reason Macro-F1 & Decision Acc & Over-Refusal & Over-Answer & Answer F1 & Parse Fail \\
+\midrule
+Phi-4-Q8_0 & 0.348 [0.307, 0.385] & 0.510 [0.434, 0.594] & 0.020 [0.000, 0.067] & 0.731 [0.645, 0.821] & 0.920 [0.853, 0.975] & 0.007 [0.000, 0.021] \\
+\textit{always-answer} & 0.130 [0.107, 0.149] & 0.350 [0.273, 0.427] & 0.000 [0.000, 0.000] & 1.000 [1.000, 1.000] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] \\
+\textit{always-abstain} & 0.094 [0.072, 0.116] & 0.650 [0.573, 0.727] & 1.000 [1.000, 1.000] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] \\
+\textit{random-uniform} & 0.245 [0.186, 0.313] & 0.574 [0.507, 0.647] & 0.747 [0.620, 0.851] & 0.253 [0.166, 0.333] & 0.000 [0.000, 0.000] & 0.000 [0.000, 0.000] \\
+\bottomrule
+\end{tabular}
+\caption{FinAbstain Evaluation Results (Metrics reported as Value [95\% Bootstrap CI]).}
+\label{tab:finabstain_results}
+\end{table*}

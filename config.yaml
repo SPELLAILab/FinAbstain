@@ -1,0 +1,32 @@
+seed: 42
+data:
+  raw_dir: data/raw
+  out_dir: out
+sections:
+  min_words: 200
+  max_words: 600            # target 300-500; split/merge paragraphs to fit
+  min_numbers: 3            # eligible item sections must contain >= 3 numbers
+candidates_per_category: 12 # scaled for single 10-K report (62 eligible sections)
+final_per_category: 8
+padding:
+  target_tokens: [8000]     # list: one benchmark file per length if >1
+  position: random          # seeded; record position
+anonymize:
+  scale_factor_range: [0.55, 1.8]   # excluded band 0.9-1.1 (must not be ~1)
+  fake_company_name: "Aldervane Holdings"
+llm:
+  backend: ollama           # ollama | mock
+  base_url: https://ollama.com
+  workers: 2                # keep low on free tier
+  max_retries: 3
+  backoff_seconds: [2, 4, 8, 16, 32, 60]
+  models:
+    generator: {name: "gemma4:31b", think: null, num_predict: 1024}
+    validator_a: {name: "gpt-oss:120b", think: "low", num_predict: 2048}
+    validator_b: {name: "nemotron-3-super", think: null, num_predict: 2048}
+checks:
+  conflict_min_rel_diff: 0.05
+  max_inserted_words: 60
+  min_kept_ratio_missing: 0.70
+audit:
+  n_items: 20               # 5 per category

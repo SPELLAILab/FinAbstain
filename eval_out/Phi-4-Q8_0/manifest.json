@@ -1,0 +1,31 @@
+{
+  "model_name": "Phi-4-Q8_0",
+  "gguf_filename": "/Data3/it_FA0571/.cache/huggingface/hub/models--bartowski--phi-4-GGUF/snapshots/19cd65f97c2f1712a81c506611d3f9c94b16a1e1/phi-4-Q8_0.gguf",
+  "server_version": "",
+  "base_url": "http://127.0.0.1:8080",
+  "request_params": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 2048,
+    "stream": false,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "ctx": 16384
+  },
+  "dataset_path": "release/benchmark.jsonl",
+  "dataset_sha256": "c55da62f8b6c6fb537c0c4a1b18e44abe28e44858253a9c0a7ea2c6de97d5c43",
+  "prompt_file_path": "eval/prompts/eval_prompt.txt",
+  "prompt_file_sha256": "9ec86b5973e8df21c5c01b4c60168b3c9a4f2eed696d4e83453d9d65ba44c44c",
+  "python_version": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]",
+  "package_versions": {
+    "requests": "2.32.3"
+  },
+  "start_time": "2026-09-20T07:23:54.582684+00:00",
+  "end_time": "2026-09-20T07:35:07.409574+00:00",
+  "total_items_in_dataset": 143,
+  "evaluated_items_count": 143,
+  "max_prompt_tokens": 8452,
+  "context_overflow_count": 0,
+  "smoke_mode": false
+}

@@ -1,0 +1,4 @@
+answerable: The text contains exactly one value or fact that answers the question, unambiguously.
+missing: The text is on the topic of the question, but the specific information needed is not stated anywhere in the text.
+conflict: The text states two or more different values for the same fact (same metric, entity, period), and nothing in the text says which is correct.
+ambiguous: The question does not say enough to pick one answer. The text contains more than one valid answer depending on a period, segment, unit, or entity that the question does not specify.

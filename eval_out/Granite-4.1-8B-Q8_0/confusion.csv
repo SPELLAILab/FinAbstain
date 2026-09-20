@@ -1,0 +1,5 @@
+gold_category,pred_answerable,pred_missing,pred_conflict,pred_ambiguous,pred_PARSE_FAIL,total
+answerable,49,0,0,0,1,50
+missing,10,17,0,0,6,33
+conflict,32,0,4,0,2,38
+ambiguous,17,1,0,2,2,22

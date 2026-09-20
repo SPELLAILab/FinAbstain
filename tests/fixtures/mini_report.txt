@@ -1,0 +1,54 @@
+PART I. FINANCIAL INFORMATION
+
+Item 1. Financial Statements
+
+Aldervane Holdings, Inc.
+CONSOLIDATED STATEMENTS OF OPERATIONS
+(in millions, except per share data)
+
+Year Ended December 31, 2023 | Year Ended December 31, 2024
+Net product sales | $434,120 | $481,250
+Net service sales | $140,665 | $156,709
+Total net sales | $574,785 | $637,959
+Operating expenses: | |
+Cost of sales | $300,500 | $330,200
+Fulfillment | $84,300 | $92,100
+Technology and content | $85,600 | $94,500
+Sales and marketing | $44,400 | $48,200
+General and administrative | $11,900 | $12,500
+Total operating expenses | $526,700 | $577,500
+Operating income | $48,085 | $60,459
+Interest income | $2,900 | $3,400
+Interest expense | ($2,400) | ($2,800)
+Income before income taxes | $48,585 | $61,059
+Provision for income taxes | $7,200 | $9,100
+Net income | $41,385 | $51,959
+Basic earnings per share | $3.95 | $4.92
+Diluted earnings per share | $3.88 | $4.85
+Weighted-average shares: | |
+Basic shares | 10,477 million shares | 10,560 million shares
+Diluted shares | 10,665 million shares | 10,710 million shares
+
+Note 1: Description of Business and Summary of Significant Accounting Policies
+Aldervane Holdings, Inc. is a leading provider of commerce, cloud computing, and digital entertainment services.
+During the fiscal year ended December 31, 2024, our global workforce expanded to approximately 1,525,000 full-time and part-time employees.
+Cash and cash equivalents totaled $73,200 million at December 31, 2024, compared with $60,100 million at December 31, 2023.
+Total assets reached $520,400 million at December 31, 2024, an increase from $462,700 million at the prior year end.
+Capital expenditures for the year ended December 31, 2024 were $53,200 million, primarily reflecting investments in technology infrastructure.
+
+Note 2: Segment Reporting
+We organize our operations into three reportable segments: North America, International, and AWS Cloud.
+Information concerning our segment revenues and operating income is summarized below.
+For the year ended December 31, 2024, North America net sales were $387,400 million, compared to $352,800 million in 2023.
+North America operating income was $24,800 million in 2024, compared to $14,900 million in 2023.
+International net sales for the year ended December 31, 2024 were $143,200 million, compared to $131,200 million in 2023.
+International operating income for 2024 was $2,800 million, representing a turnaround from an operating loss of ($2,700) million in 2023.
+AWS Cloud net sales were $107,359 million in 2024, an increase of 19% over sales of $90,757 million in 2023.
+AWS Cloud operating income was $32,859 million in 2024, representing an operating margin of 30.6%.
+
+Note 3: Long-Term Debt and Leases
+As of December 31, 2024, we had $58,300 million of total long-term debt outstanding, with maturities ranging from 2025 to 2062.
+Finance lease liabilities totaled $16,400 million as of December 31, 2024, and operating lease liabilities totaled $78,500 million.
+The weighted-average remaining lease term for operating leases was 8.4 years as of December 31, 2024.
+Rental expense under operating leases was $11,200 million in 2024, $10,100 million in 2023, and $8,900 million in 2022.
+We anticipate future lease commitments of $12,400 million in 2025, $11,800 million in 2026, and $35,600 million thereafter.

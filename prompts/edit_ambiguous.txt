@@ -1,0 +1,18 @@
+Below is an excerpt, a question, and its answer. Make the question ambiguous by inserting a second valid answer into the text along a specific dimension, and removing the specifying detail from the question so that both answers become equally plausible.
+
+Rules:
+- "blurred_dimension" must be one of: "period", "segment", "unit", "entity".
+- "anchor" must be a verbatim span copied from the excerpt that occurs EXACTLY once.
+- "inserted_text" is a short passage (<= 50 words) inserted on a new line immediately after the anchor, providing a second value ("distractor_value") along the chosen dimension (e.g. for a different fiscal year/quarter, a different business segment, or a different entity/unit).
+- "distractor_value" must differ from the original answer.
+- "removed_from_question" is a list of words to remove from the original question to make it underspecified. Every word in this list must appear in the original question and must NOT appear in new_question.
+- "new_question" is the resulting ambiguous question. It must NOT introduce new content words beyond those in the original question, and must NOT contain the answer or distractor value.
+- Do NOT use reconciliation words in inserted_text: restated, revised, revision, corrected, correction, adjusted, previously, updated, amended, formerly, initially, originally, supersede.
+
+Return ONLY JSON: {"anchor": "...", "inserted_text": "...", "distractor_value": "...", "blurred_dimension": "...", "new_question": "...", "removed_from_question": [...]}
+
+Question: {question}
+Original Answer: {answer}
+
+Excerpt:
+{section_text}
