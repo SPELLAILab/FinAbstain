@@ -4,14 +4,12 @@ env/
 venv/
 
 # Outputs and caches
-out/
 .pytest_cache/
 __pycache__/
 *.pyc
 *.pyo
 
 # Release outputs
-release/
 
 # macOS
 .DS_Store
