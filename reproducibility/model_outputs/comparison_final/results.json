@@ -1,0 +1,617 @@
+{
+  "models": {
+    "Qwen3.5-9B-Q8_0": {
+      "metrics": {
+        "reason_macro_f1": 0.36960529169377576,
+        "decision_accuracy": 0.5244755244755245,
+        "over_refusal_rate": 0.02,
+        "over_answer_rate": 0.6451612903225806,
+        "answer_em": 0.92,
+        "answer_f1": 0.9466666666666668,
+        "parse_fail_rate": 0.055944055944055944
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.3323,
+          0.4019
+        ],
+        "decision_accuracy": [
+          0.4406,
+          0.6016
+        ],
+        "over_refusal_rate": [
+          0.0,
+          0.0698
+        ],
+        "over_answer_rate": [
+          0.552,
+          0.7396
+        ],
+        "answer_em": [
+          0.8333,
+          0.9808
+        ],
+        "answer_f1": [
+          0.8843,
+          0.9933
+        ],
+        "parse_fail_rate": [
+          0.021,
+          0.0979
+        ]
+      },
+      "per_category": [
+        {
+          "category": "answerable",
+          "support": 50,
+          "precision": 0.4495,
+          "recall": 0.98,
+          "f1": 0.6164
+        },
+        {
+          "category": "missing",
+          "support": 33,
+          "precision": 1.0,
+          "recall": 0.7576,
+          "f1": 0.8621
+        },
+        {
+          "category": "conflict",
+          "support": 38,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "category": "ambiguous",
+          "support": 22,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      ],
+      "confusion_matrix": [
+        {
+          "gold_category": "answerable",
+          "pred_answerable": 49,
+          "pct_answerable": 98.0,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 1,
+          "pct_PARSE_FAIL": 2.0,
+          "total": 50
+        },
+        {
+          "gold_category": "missing",
+          "pred_answerable": 7,
+          "pct_answerable": 21.2,
+          "pred_missing": 25,
+          "pct_missing": 75.8,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 1,
+          "pct_ambiguous": 3.0,
+          "pred_PARSE_FAIL": 0,
+          "pct_PARSE_FAIL": 0.0,
+          "total": 33
+        },
+        {
+          "gold_category": "conflict",
+          "pred_answerable": 38,
+          "pct_answerable": 100.0,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 0,
+          "pct_PARSE_FAIL": 0.0,
+          "total": 38
+        },
+        {
+          "gold_category": "ambiguous",
+          "pred_answerable": 15,
+          "pct_answerable": 68.2,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 7,
+          "pct_PARSE_FAIL": 31.8,
+          "total": 22
+        }
+      ],
+      "robustness": {
+        "deterministic_only": {
+          "n": 121,
+          "decision_accuracy": 0.6198,
+          "reason_macro_f1": 0.5142
+        },
+        "per_company": [
+          {
+            "source_report": "amzn",
+            "n": 17,
+            "decision_accuracy": 0.5294,
+            "reason_macro_f1": 0.4
+          },
+          {
+            "source_report": "cat",
+            "n": 32,
+            "decision_accuracy": 0.5,
+            "reason_macro_f1": 0.3511
+          },
+          {
+            "source_report": "ko",
+            "n": 42,
+            "decision_accuracy": 0.5238,
+            "reason_macro_f1": 0.3633
+          },
+          {
+            "source_report": "pfe",
+            "n": 52,
+            "decision_accuracy": 0.5385,
+            "reason_macro_f1": 0.375
+          }
+        ]
+      }
+    },
+    "Granite-4.1-8B-Q8_0": {
+      "metrics": {
+        "reason_macro_f1": 0.4110156720916215,
+        "decision_accuracy": 0.5104895104895105,
+        "over_refusal_rate": 0.02,
+        "over_answer_rate": 0.6344086021505376,
+        "answer_em": 0.86,
+        "answer_f1": 0.91,
+        "parse_fail_rate": 0.07692307692307693
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.3238,
+          0.4917
+        ],
+        "decision_accuracy": [
+          0.4266,
+          0.5874
+        ],
+        "over_refusal_rate": [
+          0.0,
+          0.0682
+        ],
+        "over_answer_rate": [
+          0.5368,
+          0.7292
+        ],
+        "answer_em": [
+          0.7585,
+          0.9492
+        ],
+        "answer_f1": [
+          0.8333,
+          0.9744
+        ],
+        "parse_fail_rate": [
+          0.035,
+          0.1259
+        ]
+      },
+      "per_category": [
+        {
+          "category": "answerable",
+          "support": 50,
+          "precision": 0.4537,
+          "recall": 0.98,
+          "f1": 0.6203
+        },
+        {
+          "category": "missing",
+          "support": 33,
+          "precision": 0.9444,
+          "recall": 0.5152,
+          "f1": 0.6667
+        },
+        {
+          "category": "conflict",
+          "support": 38,
+          "precision": 1.0,
+          "recall": 0.1053,
+          "f1": 0.1905
+        },
+        {
+          "category": "ambiguous",
+          "support": 22,
+          "precision": 1.0,
+          "recall": 0.0909,
+          "f1": 0.1667
+        }
+      ],
+      "confusion_matrix": [
+        {
+          "gold_category": "answerable",
+          "pred_answerable": 49,
+          "pct_answerable": 98.0,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 1,
+          "pct_PARSE_FAIL": 2.0,
+          "total": 50
+        },
+        {
+          "gold_category": "missing",
+          "pred_answerable": 10,
+          "pct_answerable": 30.3,
+          "pred_missing": 17,
+          "pct_missing": 51.5,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 6,
+          "pct_PARSE_FAIL": 18.2,
+          "total": 33
+        },
+        {
+          "gold_category": "conflict",
+          "pred_answerable": 32,
+          "pct_answerable": 84.2,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 4,
+          "pct_conflict": 10.5,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 2,
+          "pct_PARSE_FAIL": 5.3,
+          "total": 38
+        },
+        {
+          "gold_category": "ambiguous",
+          "pred_answerable": 17,
+          "pct_answerable": 77.3,
+          "pred_missing": 1,
+          "pct_missing": 4.5,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 2,
+          "pct_ambiguous": 9.1,
+          "pred_PARSE_FAIL": 2,
+          "pct_PARSE_FAIL": 9.1,
+          "total": 22
+        }
+      ],
+      "robustness": {
+        "deterministic_only": {
+          "n": 121,
+          "decision_accuracy": 0.5785,
+          "reason_macro_f1": 0.5218
+        },
+        "per_company": [
+          {
+            "source_report": "amzn",
+            "n": 17,
+            "decision_accuracy": 0.5294,
+            "reason_macro_f1": 0.4079
+          },
+          {
+            "source_report": "cat",
+            "n": 32,
+            "decision_accuracy": 0.4062,
+            "reason_macro_f1": 0.2952
+          },
+          {
+            "source_report": "ko",
+            "n": 42,
+            "decision_accuracy": 0.619,
+            "reason_macro_f1": 0.5025
+          },
+          {
+            "source_report": "pfe",
+            "n": 52,
+            "decision_accuracy": 0.4808,
+            "reason_macro_f1": 0.3949
+          }
+        ]
+      }
+    },
+    "Phi-4-Q8_0": {
+      "metrics": {
+        "reason_macro_f1": 0.34846097279125965,
+        "decision_accuracy": 0.5104895104895105,
+        "over_refusal_rate": 0.02,
+        "over_answer_rate": 0.7311827956989247,
+        "answer_em": 0.86,
+        "answer_f1": 0.92,
+        "parse_fail_rate": 0.006993006993006993
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.3066,
+          0.3847
+        ],
+        "decision_accuracy": [
+          0.4336,
+          0.5944
+        ],
+        "over_refusal_rate": [
+          0.0,
+          0.0667
+        ],
+        "over_answer_rate": [
+          0.6451,
+          0.8211
+        ],
+        "answer_em": [
+          0.7592,
+          0.9492
+        ],
+        "answer_f1": [
+          0.8533,
+          0.9753
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.021
+        ]
+      },
+      "per_category": [
+        {
+          "category": "answerable",
+          "support": 50,
+          "precision": 0.4188,
+          "recall": 0.98,
+          "f1": 0.5868
+        },
+        {
+          "category": "missing",
+          "support": 33,
+          "precision": 0.9583,
+          "recall": 0.697,
+          "f1": 0.807
+        },
+        {
+          "category": "conflict",
+          "support": 38,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "category": "ambiguous",
+          "support": 22,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      ],
+      "confusion_matrix": [
+        {
+          "gold_category": "answerable",
+          "pred_answerable": 49,
+          "pct_answerable": 98.0,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 1,
+          "pct_ambiguous": 2.0,
+          "pred_PARSE_FAIL": 0,
+          "pct_PARSE_FAIL": 0.0,
+          "total": 50
+        },
+        {
+          "gold_category": "missing",
+          "pred_answerable": 10,
+          "pct_answerable": 30.3,
+          "pred_missing": 23,
+          "pct_missing": 69.7,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 0,
+          "pct_PARSE_FAIL": 0.0,
+          "total": 33
+        },
+        {
+          "gold_category": "conflict",
+          "pred_answerable": 37,
+          "pct_answerable": 97.4,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 1,
+          "pct_PARSE_FAIL": 2.6,
+          "total": 38
+        },
+        {
+          "gold_category": "ambiguous",
+          "pred_answerable": 21,
+          "pct_answerable": 95.5,
+          "pred_missing": 1,
+          "pct_missing": 4.5,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 0,
+          "pct_PARSE_FAIL": 0.0,
+          "total": 22
+        }
+      ],
+      "robustness": {
+        "deterministic_only": {
+          "n": 121,
+          "decision_accuracy": 0.595,
+          "reason_macro_f1": 0.4976
+        },
+        "per_company": [
+          {
+            "source_report": "amzn",
+            "n": 17,
+            "decision_accuracy": 0.4706,
+            "reason_macro_f1": 0.3889
+          },
+          {
+            "source_report": "cat",
+            "n": 32,
+            "decision_accuracy": 0.4688,
+            "reason_macro_f1": 0.3286
+          },
+          {
+            "source_report": "ko",
+            "n": 42,
+            "decision_accuracy": 0.5238,
+            "reason_macro_f1": 0.3538
+          },
+          {
+            "source_report": "pfe",
+            "n": 52,
+            "decision_accuracy": 0.5385,
+            "reason_macro_f1": 0.3437
+          }
+        ]
+      }
+    }
+  },
+  "baselines": {
+    "always_answer": {
+      "metrics": {
+        "reason_macro_f1": 0.12953367875647667,
+        "decision_accuracy": 0.34965034965034963,
+        "over_refusal_rate": 0.0,
+        "over_answer_rate": 1.0,
+        "answer_em": 0.0,
+        "answer_f1": 0.0,
+        "parse_fail_rate": 0.0
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.1071,
+          0.1495
+        ],
+        "decision_accuracy": [
+          0.2727,
+          0.4266
+        ],
+        "over_refusal_rate": [
+          0.0,
+          0.0
+        ],
+        "over_answer_rate": [
+          1.0,
+          1.0
+        ],
+        "answer_em": [
+          0.0,
+          0.0
+        ],
+        "answer_f1": [
+          0.0,
+          0.0
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "always_abstain": {
+      "metrics": {
+        "reason_macro_f1": 0.09375,
+        "decision_accuracy": 0.6503496503496503,
+        "over_refusal_rate": 1.0,
+        "over_answer_rate": 0.0,
+        "answer_em": 0.0,
+        "answer_f1": 0.0,
+        "parse_fail_rate": 0.0
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.0718,
+          0.1156
+        ],
+        "decision_accuracy": [
+          0.5734,
+          0.7273
+        ],
+        "over_refusal_rate": [
+          1.0,
+          1.0
+        ],
+        "over_answer_rate": [
+          0.0,
+          0.0
+        ],
+        "answer_em": [
+          0.0,
+          0.0
+        ],
+        "answer_f1": [
+          0.0,
+          0.0
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "random_uniform": {
+      "metrics": {
+        "reason_macro_f1": 0.24504602881912324,
+        "decision_accuracy": 0.5744755244755245,
+        "over_refusal_rate": 0.7468,
+        "over_answer_rate": 0.25279569892473114,
+        "answer_em": 0.0,
+        "answer_f1": 0.0,
+        "parse_fail_rate": 0.0
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.1859,
+          0.313
+        ],
+        "decision_accuracy": [
+          0.5068,
+          0.647
+        ],
+        "over_refusal_rate": [
+          0.62,
+          0.8505
+        ],
+        "over_answer_rate": [
+          0.1664,
+          0.3333
+        ],
+        "answer_em": [
+          0.0,
+          0.0
+        ],
+        "answer_f1": [
+          0.0,
+          0.0
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "dataset_items_count": 143,
+  "seed": 42
+}

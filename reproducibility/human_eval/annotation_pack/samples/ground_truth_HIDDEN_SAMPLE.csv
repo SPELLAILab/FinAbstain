@@ -1,0 +1,7 @@
+blind_id,true_label,source_item_id,report,gold_decision,validator_a,validator_b
+F284,Missing,fab-pfe-0053-mis,pfe,abstain,missing,missing
+F287,Conflict,fab-cat-0086-con,cat,abstain,conflict,conflict
+F456,Answerable,fab-pfe-0047-ans,pfe,answer,answerable,answerable
+F508,Conflict,fab-cat-0008-con,cat,abstain,conflict,conflict
+F740,Ambiguous,fab-ko-0073-amb,ko,abstain,ambiguous,ambiguous
+F925,Ambiguous,fab-pfe-0136-amb,pfe,abstain,ambiguous,ambiguous

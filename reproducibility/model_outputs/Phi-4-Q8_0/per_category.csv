@@ -1,0 +1,5 @@
+category,support,precision,recall,f1
+answerable,50,0.4188,0.98,0.5868
+missing,33,0.9583,0.697,0.807
+conflict,38,0.0,0.0,0.0
+ambiguous,22,0.0,0.0,0.0

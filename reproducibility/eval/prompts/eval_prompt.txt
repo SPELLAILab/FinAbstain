@@ -1,0 +1,17 @@
+You are given a financial report excerpt and a question. Decide whether the question can be answered from the text.
+
+Labels:
+answerable: The text contains exactly one value or fact that answers the question, unambiguously.
+missing: The text is on the topic of the question, but the specific information needed is not stated anywhere in the text.
+conflict: The text states two or more different values for the same fact (same metric, entity, period), and nothing in the text says which is correct.
+ambiguous: The question does not say enough to pick one answer. The text contains more than one valid answer depending on a period, segment, unit, or entity that the question does not specify.
+
+Use only the text. Do not use outside knowledge.
+Respond with ONLY a JSON object:
+{"decision": "answer" or "abstain", "reason": "none" | "missing" | "conflict" | "ambiguous", "answer": "<short answer if decision is answer, else empty string>"}
+If decision is "answer", reason must be "none". If decision is "abstain", reason must be one of missing, conflict, ambiguous.
+
+Text:
+{context}
+
+Question: {question}

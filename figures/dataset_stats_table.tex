@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{\textbf{FinAbstain Dataset Statistics.} Question token counts ($Q$), context tokens ($C$, short section context), and evidence span tokens ($E$) are computed using the \texttt{cl100k\_base} tokenizer. Target Depth denotes normalized position within the source passage $[0, 1]$.}
+\label{tab:dataset_stats}
+\begin{tabular}{llrrrrrrr}
+\toprule
+\textbf{Category} & \textbf{Gold Decision} & \textbf{Count ($N$)} & \textbf{\%} & \textbf{Q Tokens (Mean$\pm$SD)} & \textbf{Q Med.} & \textbf{Context Tokens} & \textbf{Evidence Tokens} & \textbf{Target Depth} \\
+\midrule
+Answerable & Answer & 50 & 35.0\% & 22.2 $\pm$ 4.3 & 22 & 746.3 $\pm$ 157.0 & 30.1 $\pm$ 19.0 & 0.49 $\pm$ 0.32 \\
+Missing & Abstain & 33 & 23.1\% & 22.3 $\pm$ 5.5 & 22 & 696.6 $\pm$ 146.4 & 41.8 $\pm$ 34.6 & 0.43 $\pm$ 0.30 \\
+Conflict & Abstain & 38 & 26.6\% & 22.8 $\pm$ 5.5 & 23 & 809.6 $\pm$ 160.6 & 26.5 $\pm$ 11.2 & 0.47 $\pm$ 0.34 \\
+Ambiguous & Abstain & 22 & 15.4\% & 14.4 $\pm$ 4.3 & 13 & 822.0 $\pm$ 149.0 & 34.5 $\pm$ 23.5 & 0.47 $\pm$ 0.26 \\
+\midrule
+\textbf{Total / Overall} & - & 143 & 100.0\% & 21.2 $\pm$ 5.7 & 22 & 763.3 $\pm$ 160.0 & 32.5 $\pm$ 23.3 & 0.47 $\pm$ 0.31 \\
+\bottomrule
+\end{tabular}
+\end{table*}

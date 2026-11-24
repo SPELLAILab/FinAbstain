@@ -1,15 +1,27 @@
-# Virtual environment
+# Virtual environments
 .venv/
 env/
 venv/
 
-# Outputs and caches
+# Python caches
 .pytest_cache/
 __pycache__/
 *.pyc
 *.pyo
 
-# Release outputs
+# Intermediate pipeline cache and outputs
+out/
+
+# Log files
+*.log
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
 
 # macOS
 .DS_Store

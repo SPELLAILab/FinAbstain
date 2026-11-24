@@ -1,0 +1,220 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# FinAbstain Benchmark: Evaluation Job Script for PBS Cluster
+# Launches llama-server on H100 MIG slice, verifies server readiness,
+# executes evaluation harness, computes score metrics, and performs clean shutdown.
+# ==============================================================================
+
+#PBS -N finabstain_eval
+#PBS -l select=1:ncpus=8:mem=30gb
+#PBS -l walltime=04:00:00
+#PBS -q workq
+#PBS -j oe
+#PBS -o logs/run_eval_${PBS_JOBID}.log
+
+# ------------------------------------------------------------------------------
+# SITE-SPECIFIC CONFIGURATION (Adjust for your cluster environment)
+# ------------------------------------------------------------------------------
+
+# Target: GPU 1 | H100 NVL | MIG 3g.47gb
+MIG_UUID="MIG-2f219700-5dc6-59eb-81ef-2bb9414d3ec0"
+
+# Model identification label used in logs, outputs, and scorecards
+MODEL_NAME="Qwen3.5-9B-Q8_0"
+
+# Path to llama-server binary (matches your ~/llama.cpp/build/bin/llama-server)
+LLAMA_SERVER="${LLAMA_SERVER:-${HOME}/llama.cpp/build/bin/llama-server}"
+
+# Path to GGUF model file (exact Qwen3.5-9B-Q8_0 model on cluster)
+GGUF_PATTERN="/Data3/it_FA0571/.cache/huggingface/hub/models--bartowski--Qwen_Qwen3.5-9B-GGUF/snapshots/*/Qwen_Qwen3.5-9B-Q8_0.gguf"
+
+# Environment / Conda activation
+# TODO: Update conda environment path or virtual environment activation command
+CONDA_ENV_NAME="financial-eval"
+# source "${HOME}/miniconda3/etc/profile.d/conda.sh"
+# conda activate "${CONDA_ENV_NAME}"
+
+# Context window configuration (Required: 16384 for FinAbstain long contexts)
+CTX=16384
+
+# Server startup timeout (seconds)
+MAX_WAIT_SECONDS=600
+
+# ------------------------------------------------------------------------------
+# ENVIRONMENT & PORT SETUP
+# ------------------------------------------------------------------------------
+
+# Change to project root directory
+if [ -n "${PBS_O_WORKDIR}" ]; then
+    cd "${PBS_O_WORKDIR}" || exit 1
+fi
+
+mkdir -p logs
+mkdir -p eval_out
+
+# Resolve GGUF file path from pattern if not directly set
+if [ -z "${GGUF}" ]; then
+    GGUF=$(ls -1 ${GGUF_PATTERN} 2>/dev/null | head -n 1)
+fi
+
+if [ -z "${GGUF}" ] || [ ! -f "${GGUF}" ]; then
+    echo "[ERROR] GGUF model file not found matching pattern: ${GGUF_PATTERN}"
+    echo "Please set the GGUF variable in this script."
+    exit 1
+fi
+
+if [ ! -x "${LLAMA_SERVER}" ]; then
+    if command -v llama-server >/dev/null 2>&1; then
+        LLAMA_SERVER=$(command -v llama-server)
+        echo "[INFO] Found llama-server in PATH: ${LLAMA_SERVER}"
+    else
+        echo "[ERROR] llama-server executable not found at: ${LLAMA_SERVER}"
+        echo "Please ensure llama.cpp is built or set LLAMA_SERVER to the binary location."
+        exit 1
+    fi
+fi
+
+# Pick port deterministically from PBS Job ID to prevent port collisions
+JOB_NUM=$(echo "${PBS_JOBID:-$$}" | grep -o '[0-9]\+' | tail -n 1)
+PORT=$((8000 + (JOB_NUM % 1000)))
+
+echo "======================================================================"
+echo "FINABSTAIN EVALUATION PBS JOB"
+echo "======================================================================"
+echo "Job ID:        ${PBS_JOBID:-local}"
+echo "Model Name:    ${MODEL_NAME}"
+echo "GGUF File:     ${GGUF}"
+echo "Server Bin:    ${LLAMA_SERVER}"
+echo "MIG/GPU UUID:  ${MIG_UUID}"
+echo "Context Size:  ${CTX}"
+echo "Server Port:   ${PORT}"
+echo "Working Dir:   $(pwd)"
+echo "Smoke Mode:    ${SMOKE:-0}"
+echo "======================================================================"
+
+# ------------------------------------------------------------------------------
+# SERVER STARTUP AND CLEANUP TRAP
+# ------------------------------------------------------------------------------
+
+export CUDA_VISIBLE_DEVICES="${MIG_UUID}"
+
+SERVER_LOG="logs/server_${PBS_JOBID:-local}_${PORT}.log"
+echo "[INFO] Starting llama-server on 127.0.0.1:${PORT} (log: ${SERVER_LOG})..."
+
+# Launch llama-server in background
+# Thinking is disabled for Qwen3.5:
+# Note: chat-template-kwargs flag disables reasoning traces at server template level
+"${LLAMA_SERVER}" \
+    -m "${GGUF}" \
+    -ngl 999 \
+    -c "${CTX}" \
+    -np 1 \
+    --jinja \
+    --host 127.0.0.1 \
+    --port "${PORT}" \
+    --reasoning off \
+    --chat-template-kwargs '{"enable_thinking":false}' \
+    > "${SERVER_LOG}" 2>&1 &
+
+SERVER_PID=$!
+echo "[INFO] llama-server launched with PID ${SERVER_PID}."
+
+# Ensure server process is reliably killed on script exit/abort
+cleanup() {
+    echo ""
+    echo "[INFO] Shutting down llama-server (PID ${SERVER_PID})..."
+    kill "${SERVER_PID}" 2>/dev/null || true
+    wait "${SERVER_PID}" 2>/dev/null || true
+    echo "[INFO] Cleanup complete."
+}
+trap cleanup EXIT INT TERM
+
+# ------------------------------------------------------------------------------
+# WAIT FOR SERVER READINESS (Poll GET /health)
+# ------------------------------------------------------------------------------
+
+echo "[INFO] Polling http://127.0.0.1:${PORT}/health for server readiness..."
+SECONDS_WAITED=0
+SERVER_READY=0
+
+while [ ${SECONDS_WAITED} -lt ${MAX_WAIT_SECONDS} ]; do
+    if ! kill -0 "${SERVER_PID}" 2>/dev/null; then
+        echo "[ERROR] llama-server process terminated prematurely! Check log: ${SERVER_LOG}"
+        cat "${SERVER_LOG}" | tail -n 30
+        exit 1
+    fi
+
+    HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:${PORT}/health" 2>/dev/null || echo "000")
+    if [ "${HTTP_CODE}" = "200" ]; then
+        SERVER_READY=1
+        echo "[INFO] llama-server is ready and healthy! (waited ${SECONDS_WAITED}s)"
+        break
+    fi
+
+    sleep 5
+    SECONDS_WAITED=$((SECONDS_WAITED + 5))
+    if [ $((SECONDS_WAITED % 30)) -eq 0 ]; then
+        echo "  ... still waiting (${SECONDS_WAITED}s / ${MAX_WAIT_SECONDS}s)"
+    fi
+done
+
+if [ ${SERVER_READY} -ne 1 ]; then
+    echo "[ERROR] Timed out waiting for llama-server after ${MAX_WAIT_SECONDS} seconds."
+    cat "${SERVER_LOG}" | tail -n 30
+    exit 1
+fi
+
+# ------------------------------------------------------------------------------
+# EXECUTE EVALUATION HARNESS
+# ------------------------------------------------------------------------------
+
+OUT_DIR="eval_out/${MODEL_NAME}"
+mkdir -p "${OUT_DIR}"
+
+EVAL_ARGS=(
+    --data "release/benchmark.jsonl"
+    --model-name "${MODEL_NAME}"
+    --base-url "http://127.0.0.1:${PORT}"
+    --out-dir "${OUT_DIR}"
+    --ctx "${CTX}"
+    --max-tokens 200
+)
+
+if [ "${SMOKE}" = "1" ]; then
+    echo ""
+    echo "======================================================================"
+    echo "RUNNING SMOKE TEST (8 ITEMS)"
+    echo "======================================================================"
+    EVAL_ARGS+=(--smoke)
+fi
+
+echo "[INFO] Running: python eval/run_eval.py ${EVAL_ARGS[*]}"
+python eval/run_eval.py "${EVAL_ARGS[@]}"
+
+# ------------------------------------------------------------------------------
+# EXECUTE SCORING HARNESS
+# ------------------------------------------------------------------------------
+
+echo ""
+echo "======================================================================"
+echo "RUNNING BENCHMARK SCORING"
+echo "======================================================================"
+python eval/score.py \
+    --data "release/benchmark.jsonl" \
+    --raw "${OUT_DIR}/raw.jsonl" \
+    --out-dir "${OUT_DIR}" \
+    --seed 42
+
+echo ""
+echo "======================================================================"
+echo "JOB COMPLETE. OUTPUT ARTIFACTS:"
+echo "======================================================================"
+echo "  Raw Outputs:       ${OUT_DIR}/raw.jsonl"
+echo "  Manifest:          ${OUT_DIR}/manifest.json"
+echo "  Results (JSON):    ${OUT_DIR}/results.json"
+echo "  Results (CSV):     ${OUT_DIR}/results.csv"
+echo "  LaTeX Table:       ${OUT_DIR}/table.tex"
+echo "  Confusion Matrix:  ${OUT_DIR}/confusion.csv"
+echo "  Category Recall:   ${OUT_DIR}/per_category.csv"
+echo "  Company Slice:     ${OUT_DIR}/per_company.csv"
+echo "======================================================================"

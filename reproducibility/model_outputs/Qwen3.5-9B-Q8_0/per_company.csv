@@ -1,0 +1,5 @@
+source_report,n,decision_accuracy,reason_macro_f1
+amzn,17,0.5294,0.4
+cat,32,0.5,0.3511
+ko,42,0.5238,0.3633
+pfe,52,0.5385,0.375

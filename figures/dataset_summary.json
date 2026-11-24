@@ -1,0 +1,77 @@
+{
+  "total_samples": 143,
+  "category_counts": {
+    "Answerable": 50,
+    "Conflict": 38,
+    "Missing": 33,
+    "Ambiguous": 22
+  },
+  "gold_decision_counts": {
+    "Abstain": 93,
+    "Answer": 50
+  },
+  "fact_type_counts": {
+    "Amount": 94,
+    "Date": 18,
+    "Percentage": 13,
+    "Name": 10,
+    "Count": 5,
+    "Other": 3
+  },
+  "report_counts": {
+    "Pfizer (Healthcare)": 52,
+    "Coca-Cola (Beverages)": 42,
+    "Caterpillar (Industrial)": 32,
+    "Amazon (Retail/Tech)": 17
+  },
+  "question_type_counts": {
+    "What": 106,
+    "Other": 25,
+    "How much/many": 7,
+    "Which": 5
+  },
+  "token_metrics": {
+    "question_tokens": {
+      "mean": 21.17,
+      "std": 5.67,
+      "median": 22.0,
+      "min": 8,
+      "max": 35
+    },
+    "context_short_tokens": {
+      "mean": 763.26,
+      "std": 159.96,
+      "median": 745.0,
+      "min": 357,
+      "max": 1226
+    },
+    "context_full_tokens": {
+      "mean": 7668.29,
+      "std": 255.15,
+      "median": 7693.0,
+      "min": 6963,
+      "max": 8177
+    },
+    "evidence_tokens": {
+      "mean": 32.52,
+      "std": 23.25,
+      "median": 26.0,
+      "min": 6,
+      "max": 151
+    },
+    "answer_tokens": {
+      "mean": 4.38,
+      "std": 2.08,
+      "median": 5.0,
+      "min": 1,
+      "max": 23
+    },
+    "target_position": {
+      "mean": 0.469,
+      "std": 0.311,
+      "median": 0.444,
+      "min": 0.0,
+      "max": 1.0
+    }
+  }
+}

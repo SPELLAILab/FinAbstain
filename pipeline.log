@@ -1,19 +1,0 @@
-Starting FinAbstain Pipeline (Seed: 42, Backend: ollama)
-
-=== Stage 07: Validate ===
-Stage 07: Validate (A & B):   0%|          | 0/22 [00:00<?, ?it/s]Stage 07: Validate (A & B):   5%|▍         | 1/22 [00:03<01:12,  3.45s/it]Stage 07: Validate (A & B):   9%|▉         | 2/22 [00:09<01:35,  4.79s/it]Stage 07: Validate (A & B):  14%|█▎        | 3/22 [00:16<01:52,  5.92s/it]Stage 07: Validate (A & B):  18%|█▊        | 4/22 [00:24<02:00,  6.70s/it]Stage 07: Validate (A & B):  23%|██▎       | 5/22 [00:34<02:15,  7.96s/it]Stage 07: Validate (A & B):  27%|██▋       | 6/22 [00:51<02:58, 11.17s/it]Stage 07: Validate (A & B):  32%|███▏      | 7/22 [00:55<02:08,  8.55s/it]Stage 07: Validate (A & B):  36%|███▋      | 8/22 [01:07<02:16,  9.74s/it]Stage 07: Validate (A & B):  41%|████      | 9/22 [01:11<01:43,  7.95s/it]Stage 07: Validate (A & B):  45%|████▌     | 10/22 [01:24<01:53,  9.44s/it]Stage 07: Validate (A & B):  50%|█████     | 11/22 [01:33<01:43,  9.37s/it]Stage 07: Validate (A & B):  55%|█████▍    | 12/22 [01:39<01:23,  8.36s/it]Stage 07: Validate (A & B):  59%|█████▉    | 13/22 [01:50<01:22,  9.19s/it]Stage 07: Validate (A & B):  64%|██████▎   | 14/22 [01:54<01:00,  7.61s/it]Stage 07: Validate (A & B):  68%|██████▊   | 15/22 [02:09<01:08,  9.83s/it]Stage 07: Validate (A & B):  73%|███████▎  | 16/22 [02:19<00:59,  9.89s/it]Stage 07: Validate (A & B):  77%|███████▋  | 17/22 [02:31<00:52, 10.46s/it]Stage 07: Validate (A & B):  82%|████████▏ | 18/22 [02:41<00:41, 10.46s/it]Stage 07: Validate (A & B):  86%|████████▋ | 19/22 [02:45<00:25,  8.42s/it]Stage 07: Validate (A & B):  91%|█████████ | 20/22 [02:48<00:13,  6.81s/it]Stage 07: Validate (A & B):  95%|█████████▌| 21/22 [02:55<00:07,  7.00s/it]Stage 07: Validate (A & B): 100%|██████████| 22/22 [03:05<00:00,  7.74s/it]Stage 07: Validate (A & B): 100%|██████████| 22/22 [03:05<00:00,  8.43s/it]
-
-=== Stage 08: Build ===
-[WARNING] Category 'answerable' has 6 items, target is 8 (shortfall: 2).
-To obtain the full target, add more financial reports to 'data/raw/' or raise candidates_per_category.
-[WARNING] Category 'missing' has 3 items, target is 8 (shortfall: 5).
-To obtain the full target, add more financial reports to 'data/raw/' or raise candidates_per_category.
-[WARNING] Category 'conflict' has 5 items, target is 8 (shortfall: 3).
-To obtain the full target, add more financial reports to 'data/raw/' or raise candidates_per_category.
-[WARNING] Category 'ambiguous' has 3 items, target is 8 (shortfall: 5).
-To obtain the full target, add more financial reports to 'data/raw/' or raise candidates_per_category.
-
-=== Stage 09: Audit ===
-
-FinAbstain Pipeline finished successfully.
-Artifacts and benchmark written to: out/

@@ -1,0 +1,293 @@
+{
+  "models": {
+    "Granite-4.1-8B-Q8_0": {
+      "metrics": {
+        "reason_macro_f1": 0.413003663003663,
+        "decision_accuracy": 0.5104895104895105,
+        "over_refusal_rate": 0.02,
+        "over_answer_rate": 0.6129032258064516,
+        "answer_em": 0.86,
+        "answer_f1": 0.91,
+        "parse_fail_rate": 0.09090909090909091
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.3264,
+          0.4934
+        ],
+        "decision_accuracy": [
+          0.4266,
+          0.5874
+        ],
+        "over_refusal_rate": [
+          0.0,
+          0.0682
+        ],
+        "over_answer_rate": [
+          0.5142,
+          0.7129
+        ],
+        "answer_em": [
+          0.7585,
+          0.9492
+        ],
+        "answer_f1": [
+          0.8333,
+          0.9744
+        ],
+        "parse_fail_rate": [
+          0.049,
+          0.1399
+        ]
+      },
+      "per_category": [
+        {
+          "category": "answerable",
+          "support": 50,
+          "precision": 0.4623,
+          "recall": 0.98,
+          "f1": 0.6282
+        },
+        {
+          "category": "missing",
+          "support": 33,
+          "precision": 0.9444,
+          "recall": 0.5152,
+          "f1": 0.6667
+        },
+        {
+          "category": "conflict",
+          "support": 38,
+          "precision": 1.0,
+          "recall": 0.1053,
+          "f1": 0.1905
+        },
+        {
+          "category": "ambiguous",
+          "support": 22,
+          "precision": 1.0,
+          "recall": 0.0909,
+          "f1": 0.1667
+        }
+      ],
+      "confusion_matrix": [
+        {
+          "gold_category": "answerable",
+          "pred_answerable": 49,
+          "pct_answerable": 98.0,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 1,
+          "pct_PARSE_FAIL": 2.0,
+          "total": 50
+        },
+        {
+          "gold_category": "missing",
+          "pred_answerable": 9,
+          "pct_answerable": 27.3,
+          "pred_missing": 17,
+          "pct_missing": 51.5,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 7,
+          "pct_PARSE_FAIL": 21.2,
+          "total": 33
+        },
+        {
+          "gold_category": "conflict",
+          "pred_answerable": 32,
+          "pct_answerable": 84.2,
+          "pred_missing": 0,
+          "pct_missing": 0.0,
+          "pred_conflict": 4,
+          "pct_conflict": 10.5,
+          "pred_ambiguous": 0,
+          "pct_ambiguous": 0.0,
+          "pred_PARSE_FAIL": 2,
+          "pct_PARSE_FAIL": 5.3,
+          "total": 38
+        },
+        {
+          "gold_category": "ambiguous",
+          "pred_answerable": 16,
+          "pct_answerable": 72.7,
+          "pred_missing": 1,
+          "pct_missing": 4.5,
+          "pred_conflict": 0,
+          "pct_conflict": 0.0,
+          "pred_ambiguous": 2,
+          "pct_ambiguous": 9.1,
+          "pred_PARSE_FAIL": 3,
+          "pct_PARSE_FAIL": 13.6,
+          "total": 22
+        }
+      ],
+      "robustness": {
+        "deterministic_only": {
+          "n": 121,
+          "decision_accuracy": 0.5785,
+          "reason_macro_f1": 0.5235
+        },
+        "per_company": [
+          {
+            "source_report": "amzn",
+            "n": 17,
+            "decision_accuracy": 0.5294,
+            "reason_macro_f1": 0.4079
+          },
+          {
+            "source_report": "cat",
+            "n": 32,
+            "decision_accuracy": 0.4062,
+            "reason_macro_f1": 0.2952
+          },
+          {
+            "source_report": "ko",
+            "n": 42,
+            "decision_accuracy": 0.619,
+            "reason_macro_f1": 0.5025
+          },
+          {
+            "source_report": "pfe",
+            "n": 52,
+            "decision_accuracy": 0.4808,
+            "reason_macro_f1": 0.4008
+          }
+        ]
+      }
+    }
+  },
+  "baselines": {
+    "always_answer": {
+      "metrics": {
+        "reason_macro_f1": 0.12953367875647667,
+        "decision_accuracy": 0.34965034965034963,
+        "over_refusal_rate": 0.0,
+        "over_answer_rate": 1.0,
+        "answer_em": 0.0,
+        "answer_f1": 0.0,
+        "parse_fail_rate": 0.0
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.1071,
+          0.1495
+        ],
+        "decision_accuracy": [
+          0.2727,
+          0.4266
+        ],
+        "over_refusal_rate": [
+          0.0,
+          0.0
+        ],
+        "over_answer_rate": [
+          1.0,
+          1.0
+        ],
+        "answer_em": [
+          0.0,
+          0.0
+        ],
+        "answer_f1": [
+          0.0,
+          0.0
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "always_abstain": {
+      "metrics": {
+        "reason_macro_f1": 0.09375,
+        "decision_accuracy": 0.6503496503496503,
+        "over_refusal_rate": 1.0,
+        "over_answer_rate": 0.0,
+        "answer_em": 0.0,
+        "answer_f1": 0.0,
+        "parse_fail_rate": 0.0
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.0718,
+          0.1156
+        ],
+        "decision_accuracy": [
+          0.5734,
+          0.7273
+        ],
+        "over_refusal_rate": [
+          1.0,
+          1.0
+        ],
+        "over_answer_rate": [
+          0.0,
+          0.0
+        ],
+        "answer_em": [
+          0.0,
+          0.0
+        ],
+        "answer_f1": [
+          0.0,
+          0.0
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "random_uniform": {
+      "metrics": {
+        "reason_macro_f1": 0.24504602881912324,
+        "decision_accuracy": 0.5744755244755245,
+        "over_refusal_rate": 0.7468,
+        "over_answer_rate": 0.25279569892473114,
+        "answer_em": 0.0,
+        "answer_f1": 0.0,
+        "parse_fail_rate": 0.0
+      },
+      "ci_95": {
+        "reason_macro_f1": [
+          0.1859,
+          0.313
+        ],
+        "decision_accuracy": [
+          0.5068,
+          0.647
+        ],
+        "over_refusal_rate": [
+          0.62,
+          0.8505
+        ],
+        "over_answer_rate": [
+          0.1664,
+          0.3333
+        ],
+        "answer_em": [
+          0.0,
+          0.0
+        ],
+        "answer_f1": [
+          0.0,
+          0.0
+        ],
+        "parse_fail_rate": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "dataset_items_count": 143,
+  "seed": 42
+}
