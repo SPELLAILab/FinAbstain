@@ -1,12 +1,32 @@
-# FinAbstain: Do Small Open Language Models Know Why a Financial Question Cannot Be Answered?
+# FinAbstain
 
-[![Paper: AAAI 2027](https://img.shields.io/badge/Accepted-AAAI%202027%20Student%20Abstract-blue.svg)](https://aaai.org)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-brightgreen.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+<p align="center">
+  <img src="figures/banner.png" alt="FinAbstain: Do Small Open Language Models Know Why a Financial Question Cannot Be Answered?" width="100%" />
+</p>
 
-> **Official repository for the AAAI 2027 Student Abstract paper:**  
-> *"FinAbstain: Do Small Open Language Models Know Why a Financial Question Cannot Be Answered?"*  
-> **Authors:** Kartik Sirohi, Kumar Prateek, Dr. Simranjit Singh (NIT Jalandhar)
+## Do Small Open Language Models Know Why a Financial Question Cannot Be Answered?
+
+<div align="center">
+
+[![Venue](https://img.shields.io/badge/AAAI%20Student%20Abstract-2027-red.svg?style=flat-square)](https://aaai.org)
+[![Dataset](https://img.shields.io/badge/Dataset-143%20Questions-yellow.svg?style=flat-square)](release/DATASET_CARD.md)
+[![License: MIT](https://img.shields.io/badge/Code-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Data: SEC 10-K](https://img.shields.io/badge/Data-SEC%2010--K%20(4%20Filings)-orange.svg?style=flat-square)](reproducibility/reports)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?style=flat-square)](https://www.python.org/)
+
+<br/>
+
+**[Kartik Sirohi](https://sirohikartik.github.io)** · **Kumar Prateek** · **Simranjit Singh**
+
+Department of Information Technology, Dr. B.R. Ambedkar National Institute of Technology Jalandhar, Punjab, India
+
+<br/>
+
+Accepted at **AAAI 2027 · Student Abstract Program** · Poster
+
+[Project Page](https://sirohikartik.github.io/finabstain.html) · [Dataset Card](release/DATASET_CARD.md) · [Reproducibility](reproducibility/README.md) · [Supplementary Material](supplementary_material.tex)
+
+</div>
 
 ---
 
